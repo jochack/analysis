@@ -9,4 +9,24 @@ As however with almost any military with a leadership though it became apparent 
 Structurally the majority of the querying that was done was looking at the third pages of most days as that would be the section where most foreign affairs, and government actions would be expressed in the paper. The final serial question then became from this revision why did the Egyptian Gazette pay so much attention to these four nation; France, United States, Russia, and France? If so for what reason would covering these events concerning these nations outside of Alexandria so important?
  Since there are four different nations I then had to set up a different query searches for each individual nation. First was finding the articles where key words of the four nations are mentioned. This was to look into where these nations would be talked about the most. For most of the querying to answer this question //placeName[contains(.,'nation')] which finds the times when the nation that replaces the place name nation in the XPATH is mentioned. This would then be used towards a graph depicting throughout the year when articles about that nation was most popular or currently occurring in the Egyptian Gazette. Upon looking at the articles themselves would then reveal why that nation would be so popular during the time period. This was to be done through a graph of the entire year counting the number of times a nation was talked about for that month. Observing this graph it is possible to see overlapping time multiple nations would be talked about at the same time, these instances would correlate to an article where both nations would be involved in some sort of event. During the June issue for example showed how Russia and Japan where having a difficult time negotiating a type of agreement. These being followed up with accounts of events concerning these issues.
  Besides tracking the rise and fall of popularity for a nation, there was also taking the number of times each nation would be talked about throughout the year. This demographic would be put into a pie chart showing the percentage of how much out of the year these four would be talked about. This would be used with querying the counts of each time the word of one of the four nations appeared. these key words would be simply the different versions each nation could be called in an article.
- Overall I would say the difficulties of this analysis would have to be finding a question in which the Egyptian Gazette can answer through querying the xml files that the entire class has come together to make. This is because of the selection that the Egyptian Gazette has for its readers. As for life in Alexandria the Egyptian Gazette is a wealth of information about the people and their life in Alexandria. From the analysis of the paper through my serial question it would seem that some concern was brought to mind about foreign countries that influence the entire world interacting and possibly taking giant moves politically towards each other. This would explain some of the events leading up to the first world war that starts ten years from the time of this newspaper. Most notably the talks about naval movements and articles about generals that originally piqued my interest begin to show why these articles would be of notice to the people of Alexandra.
+ Overall I would say the difficulties of this analysis would have to be finding a question in which the Egyptian Gazette can answer through querying the xml files that the entire class has come together to make. This is because of the selection that the Egyptian Gazette has for its readers. As for life in Alexandria the Egyptian Gazette is a wealth of information about the people and their life in Alexandria. From the analysis of the paper through my serial question it would seem that some concern was brought to mind about foreign countries that influence the entire world interacting and possibly taking giant moves politically towards each other. This would explain some of the events leading up to the first world war that starts ten years from the time of this newspaper. Most notably the talks about naval movements and articles about generals that originally piqued my interest begin to show why these articles would be of notice to the people of Alexandra. In the end the two most popular nations were Russia and America with mentions in divs being in the hundreds throughout the entire year. This may be due to the fact that at the time these two nations had the most power over the entire world.
+ google.charts.load('current', {'packages':['corechart']});
+ google.charts.setOnLoadCallback(drawChart);
+ function drawChart() {
+
+   var data = google.visualization.arrayToDataTable([
+     ['mentions', 'mentions in the year per Day'],
+     ['America',     987],
+     ['France',      26],
+     ['Japan',  20],
+     ['Russia', 602],
+   ]);
+
+   var options = {
+     title: 'Popularity in  the year'
+   };
+
+   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+   chart.draw(data, options);
+ }
